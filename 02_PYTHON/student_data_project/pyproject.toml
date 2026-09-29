@@ -1,0 +1,20 @@
+[project]
+name = "student-data-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "acdc234-git", email = "whdcks1987@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.1",
+    "pandas>=3.0.5",
+]
+
+[project.scripts]
+student-data-project = "student_data_project:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"

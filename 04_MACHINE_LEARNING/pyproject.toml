@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "accelerate>=1.14.0",
+    "huggingface-hub>=1.29.0",
     "matplotlib>=3.11.1",
     "numpy>=2.5.2",
     "pandas>=3.0.5",
@@ -23,9 +24,14 @@ dependencies = [
 [project.scripts]
 04-machine-learning = "04_machine_learning:main"
 
-[[tool.uv.index]]
-url = "https://download.pytorch.org/whl/cpu"
-
 [build-system]
 requires = ["uv_build>=0.12.2,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
